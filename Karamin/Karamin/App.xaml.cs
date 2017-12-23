@@ -26,25 +26,44 @@ namespace Karamin
 	            Text = "Bienvenue dans Karmin, un solver de diagrame de karnaug , coder en Xamarin.Forms."
 	        };
             //definition des boutons
-	        var B1 = new Button()
+            var LabelB0 = new Label()
+            {
+                Text = "00"
+            };
+	        var B0 = new Button()
 	        {
 	            Text = ArrayPricipale[0].ToString(),
 	            VerticalOptions = LayoutOptions.FillAndExpand,
                 BackgroundColor = Color.White,
 	        };
-	        var B2 = new Button()
+            //
+	        var LabelB1 = new Label()
+	        {
+	            Text = "01"
+	        };
+            var B1 = new Button()
 	        {
 	            Text = ArrayPricipale[1].ToString(),
 	            VerticalOptions = LayoutOptions.FillAndExpand,
 	            BackgroundColor = Color.White,
             };
-	        var B3 = new Button()
+            //
+	        var LabelB2 = new Label()
+	        {
+	            Text = "10"
+	        };
+            var B2 = new Button()
 	        {
 	            Text = ArrayPricipale[2].ToString(),
 	            VerticalOptions = LayoutOptions.FillAndExpand,
 	            BackgroundColor = Color.White,
             };
-	        var B4 = new Button()
+            //
+	        var LabelB3 = new Label()
+	        {
+	            Text = "11"
+	        };
+            var B3 = new Button()
 	        {
 	            Text = ArrayPricipale[3].ToString(),
 	            VerticalOptions = LayoutOptions.FillAndExpand,
@@ -63,13 +82,22 @@ namespace Karamin
 	            {
 	                new ColumnDefinition {Width = GridLength.Auto},
 	            },
+                BackgroundColor = Color.DarkGray,
+                Padding = 7,
 	        };
 
             //ajout des boutons a la grille
-	        GrillePrincipale.Children.Add((B1), 1, 0);
-	        GrillePrincipale.Children.Add((B2), 2, 0);
-	        GrillePrincipale.Children.Add((B3), 3, 0);
-	        GrillePrincipale.Children.Add((B4), 4, 0);
+	        GrillePrincipale.Children.Add(LabelB0, 1, 0);
+            GrillePrincipale.Children.Add(B0, 1, 1);
+
+	        GrillePrincipale.Children.Add(LabelB1, 1, 0);
+            GrillePrincipale.Children.Add(B1, 2, 1);
+
+	        GrillePrincipale.Children.Add(LabelB2, 1, 0);
+            GrillePrincipale.Children.Add(B2, 3, 1);
+
+	        GrillePrincipale.Children.Add(LabelB3, 1, 0);
+            GrillePrincipale.Children.Add(B3, 4, 1);
             
             //definition button remise a 0
             var all0Button = new Button()
@@ -92,10 +120,10 @@ namespace Karamin
             /// 
 	        all0Button.Clicked += foncAll0;
 	        all1Button.Clicked += foncAl1;
-	        B1.Clicked += buttonPressInGrid0;
-	        B2.Clicked += buttonPressInGrid1;
-	        B3.Clicked += buttonPressInGrid2;
-	        B4.Clicked += buttonPressInGrid3;
+	        B0.Clicked += buttonPressInGrid0;
+	        B1.Clicked += buttonPressInGrid1;
+	        B2.Clicked += buttonPressInGrid2;
+	        B3.Clicked += buttonPressInGrid3;
 
             MainPage = new ContentPage
 	        {
@@ -103,7 +131,7 @@ namespace Karamin
 	            {
 	                BackgroundColor = Color.White,
                     Spacing = 10,
-                    Padding = 10,
+                    Padding = 1,
 	                Children =
 	                {
 	                    TextHaut,
@@ -117,14 +145,17 @@ namespace Karamin
             /// 
             /// Definition des fonction
             /// 
+
+            //fonction tu updates the label of buttons
  	        void UpdateButtons()
 	        {
-	            B1.Text = ArrayPricipale[0].ToString();
-	            B2.Text = ArrayPricipale[1].ToString();
-	            B3.Text = ArrayPricipale[2].ToString();
-	            B4.Text = ArrayPricipale[3].ToString();
+	            B0.Text = ArrayPricipale[0].ToString();
+	            B1.Text = ArrayPricipale[1].ToString();
+	            B2.Text = ArrayPricipale[2].ToString();
+	            B3.Text = ArrayPricipale[3].ToString();
 	        }
 
+	        //fonction to put them all at 0
             void foncAll0(object sender, EventArgs e)
 	        {
 	            for (int i = 0; i < ArrayPricipale.Length; i++)
@@ -134,6 +165,7 @@ namespace Karamin
                 UpdateButtons();
             }
 
+            //fonction to put them all at 1
             void foncAl1(object sender, EventArgs e)
 	        {
 	            for (int i = 0; i < ArrayPricipale.Length; i++)
@@ -143,6 +175,7 @@ namespace Karamin
 	            UpdateButtons();
 	        }
 
+            //button switch 
 	        void buttonPressInGrid0(object sender, EventArgs e)
 	        {
                 switch (ArrayPricipale[0])
@@ -194,6 +227,11 @@ namespace Karamin
 	                    break;
 	            }
 	            UpdateButtons();
+	        }
+
+	        void calculeExpression()
+	        {
+	            
 	        }
 
         }
