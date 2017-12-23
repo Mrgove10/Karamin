@@ -14,6 +14,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Karamin\Karamin\Karamin.projitems*{321c80fc-48aa-49be-b859-4081c5a79afb}*SharedItemsImports = 4
+		Karamin\Karamin\Karamin.projitems*{5919abdf-de04-4972-a782-fcc0a406d8e0}*SharedItemsImports = 4
 		Karamin\Karamin\Karamin.projitems*{a572dc26-65fa-4bc4-b70e-5baf938ee18e}*SharedItemsImports = 4
 		Karamin\Karamin\Karamin.projitems*{c7f964bb-818f-4bb8-b663-2412a7dc9b8f}*SharedItemsImports = 13
 	EndGlobalSection
