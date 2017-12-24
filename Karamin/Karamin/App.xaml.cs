@@ -23,7 +23,7 @@ namespace Karamin
             //Definition du text D'intro
             Label TextHaut = new Label()
             {
-                Text = "Bienvenue dans Karmin, un solver de diagrame de karnaug , coder en Xamarin.Forms.",
+                Text = "Bienvenue dans Karamin, un solver de diagrame de karnaug , coder en Xamarin.Forms.",
                 FontSize = 25,
             };
 
